@@ -9,6 +9,7 @@ pipeline {
                   ls -lah
                  ''' 
             }
+	}
 		
 	stage('Deploy') {
             steps {
@@ -17,6 +18,6 @@ pipeline {
             }
         }	
 	
-        }
+        
     }
 }
