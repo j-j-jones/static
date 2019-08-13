@@ -13,7 +13,7 @@ pipeline {
             }
         }
         
-        stage('Lint-HTML') {
+        stage('Lint HTML') {
             steps {
                 echo 'Linting Now...'
                 sudo tidy -q -e *.html
