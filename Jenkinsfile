@@ -12,6 +12,12 @@ pipeline {
                 echo 'Testing..'
             }
         }
+        
+        stage('Lint HTML') {
+            steps {
+                tidy -q -e *.html
+            }
+        }
         stage('Deploy') {
             steps {
                 echo 'Deploying..'
