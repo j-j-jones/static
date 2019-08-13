@@ -14,6 +14,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
+                echo 'Deploying..'
                 withAWS(region:'us-east-2',credentials:'aws-static')
                 {
                     s3Upload(file: 'index.html', bucket: 'jenkins-udacity', path: '')
