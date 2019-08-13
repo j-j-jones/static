@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Helo World!!'
+                echo 'Building...'
             }
         }
         stage('Test') {
@@ -15,6 +15,7 @@ pipeline {
         
         stage('Lint-HTML') {
             steps {
+                echo 'Linting Now...'
                 sudo tidy -q -e *.html
             }
         }
