@@ -3,7 +3,16 @@ pipeline
 agent any
     stages
     {
-      stage('S3download') 
+        
+      stage('Build') 
+        {    steps {
+              sh 'echo "Hello World!"'
+              sh '''
+                  echo "Multiline shell steps work too"
+                  ls -lah
+                 ''' 
+            }
+      stage('Upload') 
         {      
             steps {
                 withAWS(region:'us-east-2',credentials:'aws-static')\
