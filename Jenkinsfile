@@ -1,18 +1,18 @@
-pipeline 
-{
-agent any
-    stages
-    {
-      stage('Build') 
-        {    steps {
-              sh 'echo "Hello World!"'
-              sh '''
-                  echo "Multiline shell steps work too"
-                  ls -lah
-                 ''' 
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Helo World!!'
             }
-      stage('Upload') 
-        {      
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
             steps {
                 withAWS(region:'us-east-2',credentials:'aws-static')\
                 {
@@ -21,5 +21,4 @@ agent any
             }
         }
     }
-}
 }
