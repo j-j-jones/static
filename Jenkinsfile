@@ -15,7 +15,7 @@ pipeline {
         
         stage('Lint-HTML') {
             steps {
-                tidy -q -e *.html
+                sudo tidy -q -e *.html
             }
         }
         stage('Deploy') {
