@@ -1,12 +1,16 @@
-pipeline {
+pipeline 
+{
 agent any
-stages {
-    stage('Deploy') {
-      steps {
-    withAWS(credentials:'awscredentials') {
-        s3Download(file: 'index.html', bucket: 'jenkins-udacity', path: '/')
-      }
+    stages
+    {
+      stage('S3download') 
+        {      
+            steps {
+                withAWS(region:'us-east-2',credentials:'aws-static')\
+                {
+                    s3Download(file: 'index.html', bucket: 'jenkins-udacity', path: '')
+                }
+            }
+        }
     }
-    }
-}
 }
