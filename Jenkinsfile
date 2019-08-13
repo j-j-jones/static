@@ -16,7 +16,7 @@ pipeline {
         stage('Lint HTML') {
             steps {
                 echo 'Linting Now...'
-                sudo tidy -q -e *.html
+                tidy -q -e *.html
             }
         }
         stage('Deploy') {
