@@ -20,7 +20,7 @@ pipeline {
                 sh 'tidy -q -e *.html'
             }
         }
-        stage('Deploy') {
+        stage('Upload to AWS') {
             steps {
                 echo 'Deploying..'
                 withAWS(region:'us-east-1',credentials:'aws-static')
