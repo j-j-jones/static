@@ -13,7 +13,7 @@ pipeline {
             }
         }
         
-        stage('Lint HTML') {
+        stage('Lint-HTML') {
             steps {
                 tidy -q -e *.html
             }
