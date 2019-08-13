@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                withAWS(region:'us-east-2',credentials:'aws-static')\
+                withAWS(region:'us-east-2',credentials:'aws-static')
                 {
                     s3Download(file: 'index.html', bucket: 'jenkins-udacity', path: '')
                 }
