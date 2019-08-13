@@ -16,6 +16,7 @@ pipeline {
         stage('Lint HTML') {
             steps {
                 echo 'Linting Now...'
+                sh 'hostname'
                 sh 'tidy -q -e *.html'
             }
         }
