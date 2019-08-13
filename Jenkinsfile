@@ -11,7 +11,7 @@ pipeline {
             }
 		
 		options {
-	withAWS(profile:'jenkins')
+	withAWS(region:'us-east-2', credentials:'aws-static')
     s3Upload(file:'index.html', bucket:'jenkins-udacity')
 }
         }
