@@ -1,10 +1,6 @@
 pipeline {
     agent any
-    options {
-	withAWS(profile:'myProfile')
-    s3Upload(file:'index.html', bucket:'jenkins-udacity')
-}
-    stages {
+      stages {
         stage('Build') {
             steps {
               sh 'echo "Hello World!"'
@@ -13,6 +9,11 @@ pipeline {
                   ls -lah
                  ''' 
             }
+		
+		options {
+	withAWS(profile:'jenkins')
+    s3Upload(file:'index.html', bucket:'jenkins-udacity')
+}
         }
     }
 }
